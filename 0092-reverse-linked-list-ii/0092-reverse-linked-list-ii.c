@@ -26,8 +26,10 @@ struct ListNode* reverseBetween(struct ListNode* head, int left, int right) {
         cur = tmpNext;
     }
 
-    leftPrev->next->next = cur;
-    leftPrev->next = prev;
+    // Connect the end of the reversed sublist to the remaining list.
+    leftPrev->next->next = cur; 
+    // Connect the start of the sublist to the previous part of the list.
+    leftPrev->next = prev;      
 
     return dummy.next;
 }
